@@ -170,15 +170,15 @@
   /* ---------- BOOTH INDEX (축소) ---------- */
   .booth-index{
     display:grid;
-    grid-template-columns: repeat(auto-fill, minmax(38px, 1fr));
-    gap:.4rem;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap:.5rem;
     margin-bottom:2.2rem;
   }
   .booth-index a{
     display:flex; align-items:center; justify-content:center;
-    aspect-ratio:1/1; border-radius:8px; border:1.5px solid var(--page-text);
+    aspect-ratio:1/1; border-radius:9px; border:2px solid var(--page-text);
     background:var(--card-background); color:var(--page-text);
-    font-weight:800; font-size:.78rem; text-decoration:none;
+    font-weight:800; font-size:.92rem; text-decoration:none;
     transition:transform .12s ease, background .12s ease, color .12s ease;
   }
   .booth-index a:hover{
@@ -204,6 +204,19 @@
     color:#fff; font-weight:800; font-size:.82rem; display:flex; align-items:center; justify-content:center;
   }
   .step-text{ font-size:.87rem; line-height:1.55; }
+  .step-text .ext-icon{
+    display:inline-block; margin-left:.3rem; font-size:.8em; color:var(--section-accent);
+    font-weight:900;
+  }
+  a.event-step{ position:relative; }
+  a.event-step::after{
+    content:'새 창에서 열림 ↗';
+    position:absolute; top:-1.55rem; left:50%; transform:translateX(-50%);
+    background:var(--page-text); color:var(--page-background);
+    font-size:.68rem; font-weight:700; padding:.25rem .55rem; border-radius:6px;
+    white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .15s ease;
+  }
+  a.event-step:hover::after{ opacity:1; }
   .step-arrow{ font-weight:800; font-size:1.1rem; color:var(--page-text); flex:0 0 auto; }
 
   /* ---------- LAYOUT / ACCESS ---------- */
@@ -237,7 +250,7 @@
     .booth-card{ padding:1.1rem 1rem; gap:.7rem; }
     .event-step{ flex-basis:100%; }
     .step-arrow{ transform:rotate(90deg); margin:0 auto; }
-    .booth-index{ grid-template-columns: repeat(auto-fill, minmax(32px, 1fr)); }
+    .booth-index{ grid-template-columns: repeat(auto-fill, minmax(42px, 1fr)); }
   }
   @media (prefers-reduced-motion: reduce){ .menu-btn{ transition:none; } }
 </style>
@@ -561,11 +574,11 @@
         <p class="event-title">설문이벤트</p>
         <div class="event-flow">
           <a class="event-step" href="http://pf.kakao.com/_xnvxcxoxj" target="_blank" rel="noopener">
-            <span class="step-num">1</span><span class="step-text">'성북구립도서관' 카카오톡 채널 추가 <br><small>[QR / 라벨: 채널추가]</small></span>
+            <span class="step-num">1</span><span class="step-text">'성북구립도서관' 카카오톡 채널 추가<span class="ext-icon">↗</span> <br><small>[QR / 라벨: 채널추가]</small></span>
           </a>
           <span class="step-arrow">→</span>
           <a class="event-step" href="https://forms.gle/K33oqQBnRtGmAzyP6" target="_blank" rel="noopener">
-            <span class="step-num">2</span><span class="step-text">책모꼬지 만족도 설문조사 참여 <br><small>[QR / 라벨: 설문]</small></span>
+            <span class="step-num">2</span><span class="step-text">책모꼬지 만족도 설문조사 참여<span class="ext-icon">↗</span> <br><small>[QR / 라벨: 설문]</small></span>
           </a>
           <span class="step-arrow">→</span>
           <div class="event-step"><span class="step-num">3</span><span class="step-text">[운영부스]에서 인증하고 성북구립도서관 굿즈 수령</span></div>
