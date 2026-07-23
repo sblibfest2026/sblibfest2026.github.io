@@ -167,18 +167,18 @@
   }
   .booth-tbd{ font-size:.88rem; color:#a49a86; font-style:italic; }
 
-  /* ---------- BOOTH INDEX ---------- */
+  /* ---------- BOOTH INDEX (축소) ---------- */
   .booth-index{
     display:grid;
-    grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
-    gap:.55rem;
+    grid-template-columns: repeat(auto-fill, minmax(38px, 1fr));
+    gap:.4rem;
     margin-bottom:2.2rem;
   }
   .booth-index a{
     display:flex; align-items:center; justify-content:center;
-    aspect-ratio:1/1; border-radius:10px; border:2px solid var(--page-text);
+    aspect-ratio:1/1; border-radius:8px; border:1.5px solid var(--page-text);
     background:var(--card-background); color:var(--page-text);
-    font-weight:800; font-size:.95rem; text-decoration:none;
+    font-weight:800; font-size:.78rem; text-decoration:none;
     transition:transform .12s ease, background .12s ease, color .12s ease;
   }
   .booth-index a:hover{
@@ -195,8 +195,10 @@
   .event-step{
     display:flex; align-items:center; gap:.6rem; background:var(--card-background);
     border:2px solid var(--page-text); border-radius:12px; padding:.8rem 1rem; flex:1 1 220px;
+    text-decoration:none; color:inherit; transition:transform .12s ease;
   }
   #event .event-step{ background:var(--page-background); }
+  a.event-step:hover{ transform:translateY(-3px); }
   .step-num{
     flex:0 0 auto; width:1.7rem; height:1.7rem; border-radius:50%; background:var(--section-accent);
     color:#fff; font-weight:800; font-size:.82rem; display:flex; align-items:center; justify-content:center;
@@ -235,6 +237,7 @@
     .booth-card{ padding:1.1rem 1rem; gap:.7rem; }
     .event-step{ flex-basis:100%; }
     .step-arrow{ transform:rotate(90deg); margin:0 auto; }
+    .booth-index{ grid-template-columns: repeat(auto-fill, minmax(32px, 1fr)); }
   }
   @media (prefers-reduced-motion: reduce){ .menu-btn{ transition:none; } }
 </style>
@@ -264,7 +267,7 @@
     </div>
     <div class="menu-row">
       <a class="menu-btn menu-btn--layout" href="#layout">배치도</a>
-      <a class="menu-btn menu-btn--directions" href=#layout">오시는길</a>
+      <a class="menu-btn menu-btn--directions" href="#layout">오시는길</a>
     </div>
     <div class="menu-row">
       <a class="menu-btn menu-btn--survey" href="https://forms.gle/K33oqQBnRtGmAzyP6" target="_blank" rel="noopener">설문조사</a>
@@ -322,9 +325,6 @@
         <img class="deco-bookstack" src="images/deco/bookstack.png" alt="" aria-hidden="true">
       </div>
       <p class="event-headcopy">성북구립도서관 네트워크, 유관기관과 함께하는 체험부스</p>
-      <!--
-      <p class="block-sub">성북구립도서관 네트워크, 유관기관과 함께하는 체험부스</p>
-      <p class="booth-headcopy">성북구립도서관 네트워크, 유관기관과 함께하는 체험부스</p> -->
 
       <div class="booth-index">
         <a href="#b01" title="히히살롱">1</a>
@@ -560,9 +560,13 @@
       <div class="event-block">
         <p class="event-title">설문이벤트</p>
         <div class="event-flow">
-          <div class="event-step"><span class="step-num">1</span><span class="step-text">'성북구립도서관' 카카오톡 채널 추가 <br><small>[QR / 라벨: 채널추가]</small></span></div>
+          <a class="event-step" href="http://pf.kakao.com/_xnvxcxoxj" target="_blank" rel="noopener">
+            <span class="step-num">1</span><span class="step-text">'성북구립도서관' 카카오톡 채널 추가 <br><small>[QR / 라벨: 채널추가]</small></span>
+          </a>
           <span class="step-arrow">→</span>
-          <div class="event-step"><span class="step-num">2</span><span class="step-text">책모꼬지 만족도 설문조사 참여 <br><small>[QR / 라벨: 설문]</small></span></div>
+          <a class="event-step" href="https://forms.gle/K33oqQBnRtGmAzyP6" target="_blank" rel="noopener">
+            <span class="step-num">2</span><span class="step-text">책모꼬지 만족도 설문조사 참여 <br><small>[QR / 라벨: 설문]</small></span>
+          </a>
           <span class="step-arrow">→</span>
           <div class="event-step"><span class="step-num">3</span><span class="step-text">[운영부스]에서 인증하고 성북구립도서관 굿즈 수령</span></div>
         </div>
@@ -615,16 +619,19 @@
       <p>주최| 성북구&nbsp;&nbsp;&nbsp;주관| 성북문화재단</p>
     </div>
   </footer>
-<script>
-  document.querySelectorAll('.booth-index a').forEach(function(link){
-    link.addEventListener('click', function(e){
-      e.preventDefault();
-      var target = document.querySelector(this.getAttribute('href'));
-      if (target){
-        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
+
+  <script>
+    document.querySelectorAll('.booth-index a').forEach(function(link){
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (!target) return;
+        var rect = target.getBoundingClientRect();
+        var targetY = window.scrollY + rect.top - (window.innerHeight / 2) + (rect.height / 2);
+        window.scrollTo({ top: targetY, behavior: 'smooth' });
+      });
     });
-  });
-</script>
+  </script>
+
 </body>
 </html>
