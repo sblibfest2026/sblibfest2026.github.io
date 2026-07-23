@@ -49,6 +49,14 @@
     overflow-x: hidden;
   }
 
+  /* 장식용 포스터 컷아웃 이미지 공통 */
+  .deco{
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+  }
+
   /* ---------- HERO ---------- */
   .hero{
     position: relative;
@@ -56,6 +64,42 @@
     text-align: center;
     background-color: var(--page-background);
     border-bottom: 4px solid var(--page-text);
+    overflow: hidden;
+  }
+
+  .hero .deco-pinkstar{
+    top: 6%;
+    right: 8%;
+    width: clamp(38px, 6vw, 64px);
+    transform: rotate(8deg);
+  }
+
+  .hero .deco-ministar{
+    top: 12%;
+    left: 6%;
+    width: clamp(34px, 5.5vw, 58px);
+    transform: rotate(-10deg);
+  }
+
+  .hero .deco-flower{
+    bottom: -6%;
+    left: 2%;
+    width: clamp(70px, 11vw, 130px);
+    transform: rotate(-6deg);
+    opacity: .92;
+  }
+
+  .hero .deco-coffeecup{
+    bottom: -4%;
+    right: 3%;
+    width: clamp(64px, 10vw, 116px);
+    transform: rotate(9deg);
+    opacity: .92;
+  }
+
+  .hero-content{
+    position: relative;
+    z-index: 2;
   }
 
   .badge{
@@ -164,15 +208,26 @@
 
   /* ---------- SECTIONS ---------- */
   section.block{
+    position: relative;
     padding: 5rem 6vw;
     border-bottom: 4px solid var(--page-text);
+    overflow: hidden;
   }
 
   section.block:last-of-type{ border-bottom: none; }
 
   .block-inner{
+    position: relative;
+    z-index: 2;
     max-width: 760px;
     margin: 0 auto;
+  }
+
+  .block-label-row{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.4rem;
   }
 
   .block-label{
@@ -180,13 +235,34 @@
     font-family: 'Pretendard', sans-serif;
     font-weight: 800;
     font-size: clamp(1.5rem, 4.5vw, 2.1rem);
-    margin-bottom: 2.4rem;
     padding-bottom: .3rem;
     border-bottom: 5px solid var(--section-accent);
   }
 
+  .block-label-row .deco-bookstack{
+    position: static;
+    width: clamp(44px, 6vw, 64px);
+    transform: rotate(-4deg);
+  }
+
   #booth{ background: var(--card-background); }
   #layout{ background: var(--page-background); }
+
+  #booth .deco-glasses{
+    bottom: -3%;
+    right: -2%;
+    width: clamp(80px, 12vw, 150px);
+    transform: rotate(6deg);
+    opacity: .85;
+  }
+
+  #booth .deco-guitar{
+    top: 4%;
+    right: 2%;
+    width: clamp(52px, 8vw, 92px);
+    transform: rotate(10deg);
+    opacity: .9;
+  }
 
   .sub-card{
     background: var(--page-background);
@@ -227,12 +303,27 @@
 
   /* ---------- FOOTER ---------- */
   footer{
+    position: relative;
     background: var(--footer-background);
     color: var(--footer-text);
     text-align: center;
     padding: 3rem 6vw;
     font-size: .85rem;
     line-height: 1.9;
+    overflow: hidden;
+  }
+
+  footer .footer-inner{
+    position: relative;
+    z-index: 2;
+  }
+
+  footer .deco-paperplane{
+    top: 8%;
+    left: 6%;
+    width: clamp(46px, 7vw, 78px);
+    transform: rotate(-14deg);
+    opacity: .9;
   }
 
   footer .name{
@@ -246,23 +337,36 @@
   @media (max-width: 480px){
     .menu-btn{ padding: .8rem 1.2rem; font-size: .85rem; }
     .facts{ padding: 1.1rem 1.3rem; }
+    .hero .deco-flower, .hero .deco-coffeecup{ width: 60px; }
+    .block-label-row .deco-bookstack{ width: 38px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .menu-btn{ transition: none; }
   }
 </style>
 </head>
 <body>
 
   <section class="hero">
-    <span class="badge">2026 책모꼬지</span>
-    <h1>성북 북페스티벌</h1>
+    <img class="deco deco-pinkstar" src="images/deco/pinkstar.png" alt="" aria-hidden="true">
+    <img class="deco deco-ministar" src="images/deco/ministar.png" alt="" aria-hidden="true">
+    <img class="deco deco-flower" src="images/deco/flower.png" alt="" aria-hidden="true">
+    <img class="deco deco-coffeecup" src="images/deco/coffeecup.png" alt="" aria-hidden="true">
 
-    <div class="facts">
-      <div class="row">
-        <span class="tag">일시</span>
-        <span class="val">2026. 9. 6.(일) 15:00 – 20:00</span>
-      </div>
-      <div class="row">
-        <span class="tag">장소</span>
-        <span class="val">성북구청 앞 바람마당교,<br>성북천 수변활력거점 일대</span>
+    <div class="hero-content">
+      <span class="badge">2026 책모꼬지</span>
+      <h1>성북 북페스티벌</h1>
+
+      <div class="facts">
+        <div class="row">
+          <span class="tag">일시</span>
+          <span class="val">2026. 9. 6.(일) 15:00 – 20:00</span>
+        </div>
+        <div class="row">
+          <span class="tag">장소</span>
+          <span class="val">성북구청 앞 바람마당교,<br>성북천 수변활력거점 일대</span>
+        </div>
       </div>
     </div>
   </section>
@@ -280,8 +384,14 @@
   </div>
 
   <section class="block" id="booth">
+    <img class="deco deco-guitar" src="images/deco/guitar.png" alt="" aria-hidden="true">
+    <img class="deco deco-glasses" src="images/deco/glasses.png" alt="" aria-hidden="true">
+
     <div class="block-inner">
-      <h2 class="block-label">부스 &amp; 프로그램</h2>
+      <div class="block-label-row">
+        <h2 class="block-label">부스 &amp; 프로그램</h2>
+        <img class="deco-bookstack" src="images/deco/bookstack.png" alt="" aria-hidden="true">
+      </div>
 
       <div class="sub-card">
         <p class="sub-title">체험부스</p>
@@ -307,7 +417,7 @@
 
   <section class="block" id="layout">
     <div class="block-inner">
-      <h2 class="block-label">현장 배치도</h2>
+      <h2 class="block-label" style="display:block; margin-bottom:2.4rem;">현장 배치도</h2>
       <img class="layout-img" src="images/layout.jpg" alt="2026 성북 북페스티벌 현장 배치도">
       <!--
       <p class="layout-caption">
@@ -318,9 +428,13 @@
   </section>
 
   <footer>
-    <p class="name">2026 성북 북페스티벌</p>
-    <p>2026. 9. 6.(일) 15:00~20:00</p> <p>성북구청 앞 바람마당교, 성북천 수변활력거점 일대</p>
-    <p>주최| 성북구 · 주관| 성북문화재단</p>
+    <img class="deco deco-paperplane" src="images/deco/paperplane.png" alt="" aria-hidden="true">
+    <div class="footer-inner">
+      <p class="name">2026 성북 북페스티벌</p>
+      <p>2026. 9. 6.(일) 15:00~20:00</p>
+      <p>성북구청 앞 바람마당교, 성북천 수변활력거점 일대</p>
+      <p>주최| 성북구 · 주관| 성북문화재단</p>
+    </div>
   </footer>
 
 </body>
