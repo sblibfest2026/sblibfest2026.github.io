@@ -8,14 +8,34 @@
   @import url('https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.css');
 
   :root{
-    --cream: #f7efdc;
-    --coral: #e2532f;
-    --coral-deep: #c73f20;
-    --mustard: #f2b705;
-    --mustard-deep: #d99f00;
-    --ink: #1c1712;
-    --teal: #4f9c86;
-    --pink: #f3a7c2;
+    /* 배경/텍스트 기본 */
+    --page-background: #f7efdc;
+    --page-text: #1c1712;
+    --card-background: #ffffff;
+
+    /* 히어로 뱃지 */
+    --badge-background: #f2b705;
+
+    /* 일시/장소 카드의 라벨 태그 */
+    --facts-tag-background: #4f9c86;
+
+    /* 상단 메뉴 버튼 (부스 / 오시는길 / 배치도) */
+    --menu-button-booth: #e2532f;
+    --menu-button-directions: #4f9c86;
+    --menu-button-layout: #f3a7c2;
+
+    /* 하단 메뉴 버튼 (설문조사 / 카카오채널) */
+    --menu-button-survey: #f2b705;
+    --menu-button-kakao: #fee500;
+
+    /* 본문 섹션 제목 밑줄, 강조 텍스트 */
+    --section-accent: #e2532f;
+    --section-accent-deep: #c73f20;
+
+    /* 푸터 */
+    --footer-background: #1c1712;
+    --footer-text: #f7efdc;
+    --footer-accent: #f2b705;
   }
 
   *{ margin:0; padding:0; box-sizing:border-box; }
@@ -23,8 +43,8 @@
   html{ scroll-behavior: smooth; }
 
   body{
-    background: var(--cream);
-    color: var(--ink);
+    background: var(--page-background);
+    color: var(--page-text);
     font-family: 'Pretendard', -apple-system, sans-serif;
     overflow-x: hidden;
   }
@@ -34,20 +54,20 @@
     position: relative;
     padding: 9vh 6vw 6vh;
     text-align: center;
-    background-color: var(--cream);
-    border-bottom: 4px solid var(--ink);
+    background-color: var(--page-background);
+    border-bottom: 4px solid var(--page-text);
   }
 
   .badge{
     display: inline-block;
-    background: var(--mustard);
-    color: var(--ink);
+    background: var(--badge-background);
+    color: var(--page-text);
     font-family: 'Pretendard', sans-serif;
     font-weight: 800;
     font-size: clamp(.85rem, 2vw, 1.05rem);
     padding: .5rem 1.3rem;
     border-radius: 999px;
-    border: 3px solid var(--ink);
+    border: 3px solid var(--page-text);
     letter-spacing: .02em;
     margin-bottom: 1.6rem;
   }
@@ -55,16 +75,11 @@
   h1{
     font-family: 'Pretendard', sans-serif;
     font-weight: 900;
-    font-size: clamp(2.6rem, 9vw, 5.2rem);
+    font-size: clamp(2rem, 8.5vw, 4.6rem);
     line-height: 1.1;
     letter-spacing: -0.02em;
-    color: var(--ink);
-  }
-
-  h1 .small{
-    display: block;
-    font-size: .5em;
-    margin-bottom: .2em;
+    color: var(--page-text);
+    white-space: nowrap;
   }
 
   .facts{
@@ -73,8 +88,8 @@
     flex-direction: column;
     gap: .55rem;
     text-align: left;
-    background: #fff;
-    border: 3px solid var(--ink);
+    background: var(--card-background);
+    border: 3px solid var(--page-text);
     border-radius: 18px;
     padding: 1.4rem 1.8rem;
   }
@@ -88,7 +103,7 @@
 
   .facts .tag{
     flex: 0 0 auto;
-    background: var(--teal);
+    background: var(--facts-tag-background);
     color: #fff;
     font-weight: 700;
     font-size: .78em;
@@ -101,37 +116,56 @@
     line-height: 1.5;
   }
 
-  /* ---------- MENU ROW ---------- */
-  nav.menu{
+  /* ---------- MENU BUTTONS ---------- */
+  .menu-wrap{
+    background: var(--page-background);
+    border-bottom: 4px solid var(--page-text);
+    padding: 1.8rem 6vw 2rem;
+  }
+
+  .menu-row{
     display: flex;
-    background: var(--ink);
-    border-bottom: 4px solid var(--ink);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .7rem;
   }
 
-  nav.menu a{
-    flex: 1 1 0;
+  .menu-row + .menu-row{ margin-top: .7rem; }
+
+  .menu-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 1.15rem .5rem;
-    color: var(--cream);
+    padding: .9rem 1.7rem;
+    border-radius: 999px;
+    border: 2.5px solid var(--page-text);
+    color: var(--page-text);
     text-decoration: none;
-    font-weight: 700;
-    font-size: clamp(.82rem, 2.6vw, 1.05rem);
-    letter-spacing: .02em;
-    border-right: 2px solid rgba(247,239,220,0.18);
-    transition: background .15s ease, color .15s ease;
+    font-weight: 800;
+    font-size: clamp(.85rem, 2.4vw, 1rem);
+    letter-spacing: .01em;
+    transition: transform .15s ease, opacity .15s ease;
   }
 
-  nav.menu a:last-child{ border-right: none; }
+  .menu-btn:hover{
+    transform: translateY(-3px);
+  }
 
-  nav.menu a:nth-child(1):hover{ background: var(--coral); }
-  nav.menu a:nth-child(2):hover{ background: var(--mustard); color: var(--ink); }
-  nav.menu a:nth-child(3):hover{ background: var(--teal); }
-  nav.menu a:nth-child(4):hover{ background: var(--pink); color: var(--ink); }
+  .menu-btn:active{
+    transform: translateY(0);
+  }
+
+  .menu-btn--booth{ background: var(--menu-button-booth); color: #fff; }
+  .menu-btn--directions{ background: var(--menu-button-directions); color: #fff; }
+  .menu-btn--layout{ background: var(--menu-button-layout); color: var(--page-text); }
+  .menu-btn--survey{ background: var(--menu-button-survey); color: var(--page-text); }
+  .menu-btn--kakao{ background: var(--menu-button-kakao); color: var(--page-text); }
 
   /* ---------- SECTIONS ---------- */
   section.block{
     padding: 5rem 6vw;
-    border-bottom: 4px solid var(--ink);
+    border-bottom: 4px solid var(--page-text);
   }
 
   section.block:last-of-type{ border-bottom: none; }
@@ -148,27 +182,27 @@
     font-size: clamp(1.5rem, 4.5vw, 2.1rem);
     margin-bottom: 2.4rem;
     padding-bottom: .3rem;
-    border-bottom: 5px solid var(--coral);
+    border-bottom: 5px solid var(--section-accent);
   }
 
-  #booth{ background: #fff; }
-  #layout{ background: var(--cream); }
+  #booth{ background: var(--card-background); }
+  #layout{ background: var(--page-background); }
 
   .sub-card{
-    background: var(--cream);
-    border: 2.5px solid var(--ink);
+    background: var(--page-background);
+    border: 2.5px solid var(--page-text);
     border-radius: 14px;
     padding: 1.4rem 1.6rem;
     margin-bottom: 1.1rem;
   }
 
-  #layout .sub-card{ background: #fff; }
+  #layout .sub-card{ background: var(--card-background); }
 
   .sub-card .sub-title{
     font-weight: 800;
     font-size: 1.02rem;
     margin-bottom: .4rem;
-    color: var(--coral-deep);
+    color: var(--section-accent-deep);
   }
 
   .sub-card p{
@@ -177,20 +211,24 @@
     color: #3a332a;
   }
 
-  .placeholder-box{
-    border: 2.5px dashed var(--ink);
+  .layout-img{
+    width: 100%;
+    border: 2.5px solid var(--page-text);
     border-radius: 14px;
-    padding: 3.5rem 1.5rem;
-    text-align: center;
+    display: block;
+  }
+
+  .layout-caption{
+    margin-top: 1rem;
+    font-size: .85rem;
     color: #6b6255;
-    font-size: .92rem;
-    background: #fff;
+    line-height: 1.7;
   }
 
   /* ---------- FOOTER ---------- */
   footer{
-    background: var(--ink);
-    color: var(--cream);
+    background: var(--footer-background);
+    color: var(--footer-text);
     text-align: center;
     padding: 3rem 6vw;
     font-size: .85rem;
@@ -202,11 +240,11 @@
     font-weight: 800;
     font-size: 1.15rem;
     margin-bottom: .4rem;
-    color: var(--mustard);
+    color: var(--footer-accent);
   }
 
   @media (max-width: 480px){
-    nav.menu a{ padding: .95rem .3rem; font-size: .8rem; }
+    .menu-btn{ padding: .8rem 1.2rem; font-size: .85rem; }
     .facts{ padding: 1.1rem 1.3rem; }
   }
 </style>
@@ -215,7 +253,7 @@
 
   <section class="hero">
     <span class="badge">2026 책모꼬지</span>
-    <h1>성북<br>북페스티벌</h1>
+    <h1>성북 북페스티벌</h1>
 
     <div class="facts">
       <div class="row">
@@ -229,14 +267,17 @@
     </div>
   </section>
 
-  <nav class="menu">
-    <a href="#booth">부스</a>
-    <!-- 설문조사 구글폼 -->
-    <a href="https://forms.gle/K33oqQBnRtGmAzyP6" target="_blank" rel="noopener">설문조사</a>
-    <!-- 오시는길: 성북구청 안내페이지 -->
-    <a href="https://www.sb.go.kr/www/contents.do?key=6008" target="_blank" rel="noopener">오시는길</a>
-    <a href="#layout">배치도</a>
-  </nav>
+  <div class="menu-wrap">
+    <div class="menu-row">
+      <a class="menu-btn menu-btn--booth" href="#booth">부스</a>
+      <a class="menu-btn menu-btn--directions" href="https://www.sb.go.kr/www/contents.do?key=6008" target="_blank" rel="noopener">오시는길</a>
+      <a class="menu-btn menu-btn--layout" href="#layout">배치도</a>
+    </div>
+    <div class="menu-row">
+      <a class="menu-btn menu-btn--survey" href="https://forms.gle/K33oqQBnRtGmAzyP6" target="_blank" rel="noopener">설문조사</a>
+      <a class="menu-btn menu-btn--kakao" href="http://pf.kakao.com/_xnvxcxoxj" target="_blank" rel="noopener">성북구립도서관 카카오톡 채널 추가</a>
+    </div>
+  </div>
 
   <section class="block" id="booth">
     <div class="block-inner">
@@ -267,8 +308,8 @@
   <section class="block" id="layout">
     <div class="block-inner">
       <h2 class="block-label">현장 배치도</h2>
-      <img src="images/layout.jpg" alt="2026 성북 북페스티벌 현장 배치도" style="width:100%; border:2.5px solid var(--ink); border-radius:14px; display:block;">
-      <p style="margin-top:1rem; font-size:.85rem; color:#6b6255; line-height:1.7;">
+      <img class="layout-img" src="images/layout.jpg" alt="2026 성북 북페스티벌 현장 배치도">
+      <p class="layout-caption">
         푸드트럭 · 부스 1~18번 · 무대(공연) · 야외도서관 · 버스킹존 · 참여전시 · 운영부스 · 어린이 놀이터 위치를 확인하세요.
       </p>
     </div>
