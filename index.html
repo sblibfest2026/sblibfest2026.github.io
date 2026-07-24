@@ -56,6 +56,27 @@
   .hero .deco-coffeecup{ bottom:-2%; right:3%; width:clamp(64px,10vw,116px); transform:rotate(9deg); opacity:.92; }
   .hero-content{ position:relative; z-index:2; }
 
+  /* 추가 흩뿌림 요소 (deco2) */
+  .deco2{ position:absolute; pointer-events:none; user-select:none; z-index:1; opacity:.85; }
+  .hero .deco2-star-orange{ top:32%; left:3%; width:clamp(26px,4vw,42px); transform:rotate(-16deg); }
+  .hero .deco2-leaf-yellow{ top:8%; left:38%; width:clamp(22px,3.4vw,36px); transform:rotate(20deg); opacity:.7; }
+
+  #timeline .deco2-star-pink2{ top:10%; left:5%; width:clamp(28px,4.5vw,46px); transform:rotate(-8deg); }
+  #timeline .deco2-note-green{ top:34%; right:14%; width:clamp(18px,2.8vw,28px); transform:rotate(10deg); }
+  #timeline .deco2-note-orange{ bottom:8%; right:8%; width:clamp(20px,3vw,32px); transform:rotate(-14deg); }
+  #timeline .deco2-notepad{ bottom:4%; left:4%; width:clamp(34px,5.5vw,56px); transform:rotate(6deg); opacity:.7; }
+
+  #booth .deco2-puzzle{ top:3%; left:2%; width:clamp(36px,5.5vw,58px); transform:rotate(-10deg); opacity:.75; }
+  #booth .deco2-book-yellow{ bottom:5%; left:1%; width:clamp(30px,5vw,50px); transform:rotate(8deg); opacity:.7; }
+
+  #event .deco2-lamp-blue{ bottom:3%; left:2%; width:clamp(40px,6vw,64px); transform:rotate(-6deg); opacity:.7; }
+  #event .deco2-shape-blue{ top:6%; right:5%; width:clamp(22px,3.4vw,36px); transform:rotate(12deg); }
+
+  #layout .deco2-acorn{ top:4%; right:3%; width:clamp(26px,4vw,42px); transform:rotate(10deg); opacity:.75; }
+  #layout .deco2-leaf-orange{ bottom:3%; left:2%; width:clamp(30px,4.6vw,48px); transform:rotate(-14deg); opacity:.7; }
+
+  footer .deco2-leaf-yellow2{ top:12%; right:6%; width:clamp(24px,3.6vw,38px); transform:rotate(-10deg); opacity:.55; }
+
   .hero-title-img{
     display:block;
     width: min(94vw, 760px);
@@ -264,6 +285,8 @@
     <img class="deco deco-ministar" src="images/deco/ministar.png" alt="" aria-hidden="true">
     <img class="deco deco-flower" src="images/deco/flower.png" alt="" aria-hidden="true">
     <img class="deco deco-coffeecup" src="images/deco/coffeecup.png" alt="" aria-hidden="true">
+    <img class="deco2 deco2-star-orange" src="images/deco2/star-orange.png" alt="" aria-hidden="true">
+    <img class="deco2 deco2-leaf-yellow" src="images/deco2/leaf-yellow.png" alt="" aria-hidden="true">
     <div class="hero-content">
       <img class="hero-title-img" src="images/hero-title.png" alt="2026 책모꼬지 성북 북페스티벌">
       <div class="facts">
@@ -293,6 +316,10 @@
   <!-- 구간3: 타임라인 -->
   <section class="block" id="timeline">
     <img class="deco deco-guitar" src="images/deco/guitar.png" alt="" aria-hidden="true">
+    <img class="deco2 deco2-star-pink2" src="images/deco2/star-pink2.png" alt="" aria-hidden="true">
+    <img class="deco2 deco2-note-green" src="images/deco2/note-green.png" alt="" aria-hidden="true">
+    <img class="deco2 deco2-note-orange" src="images/deco2/note-orange.png" alt="" aria-hidden="true">
+    <img class="deco2 deco2-notepad" src="images/deco2/notepad.png" alt="" aria-hidden="true">
     <div class="block-inner">
       <div class="block-label-row"><h2 class="block-label">일정</h2></div>
       <p class="block-sub">낮부터 밤까지 성북 책모꼬지와 함께!</p>
@@ -335,6 +362,8 @@
   <!-- 구간4: 부스 운영 내용 -->
   <section class="block" id="booth">
     <img class="deco deco-glasses" src="images/deco/glasses.png" alt="" aria-hidden="true">
+    <img class="deco2 deco2-puzzle" src="images/deco2/puzzle.png" alt="" aria-hidden="true">
+    <img class="deco2 deco2-book-yellow" src="images/deco2/book-yellow.png" alt="" aria-hidden="true">
     <div class="block-inner">
       <div class="block-label-row">
         <h2 class="block-label">부스</h2>
@@ -559,6 +588,8 @@
 
   <!-- 구간5: 이벤트 -->
   <section class="block" id="event">
+    <img class="deco2 deco2-lamp-blue" src="images/deco2/lamp-blue.png" alt="" aria-hidden="true">
+    <img class="deco2 deco2-shape-blue" src="images/deco2/shape-blue.png" alt="" aria-hidden="true">
     <div class="block-inner">
       <div class="block-label-row"><h2 class="block-label">이벤트</h2></div>
       <p class="event-headcopy">발길 닿는 곳마다 손에 남는 즐거움</p>
@@ -594,6 +625,8 @@
 
   <!-- 구간6: 배치도 · 오시는 길 -->
   <section class="block" id="layout">
+    <img class="deco2 deco2-acorn" src="images/deco2/acorn.png" alt="" aria-hidden="true">
+    <img class="deco2 deco2-leaf-orange" src="images/deco2/leaf-orange.png" alt="" aria-hidden="true">
     <div class="block-inner">
       <h2 class="block-label" style="display:block; margin-bottom:1.6rem;">배치도 &middot; 오시는 길</h2>
 
@@ -630,6 +663,7 @@
 
   <footer>
     <img class="deco deco-paperplane" src="images/deco/paperplane.png" alt="" aria-hidden="true">
+    <img class="deco2 deco2-leaf-yellow2" src="images/deco2/leaf-yellow.png" alt="" aria-hidden="true">
     <div class="footer-inner">
       <p class="name">2026 성북 책모꼬지</p>
       <p>2026. 9. 6.(일) 15:00~20:00</p>
