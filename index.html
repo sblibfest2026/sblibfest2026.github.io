@@ -60,23 +60,36 @@
   .deco2{ position:absolute; pointer-events:none; user-select:none; z-index:1; opacity:.85; }
   .hero .deco2-star-orange{ top:32%; left:3%; width:clamp(26px,4vw,42px); transform:rotate(-16deg); }
   .hero .deco2-leaf-yellow{ top:8%; left:38%; width:clamp(22px,3.4vw,36px); transform:rotate(20deg); opacity:.7; }
+  .hero .deco2-leaf-yellow-b{ top:44%; right:14%; width:clamp(18px,2.8vw,28px); transform:rotate(-24deg); opacity:.6; }
 
   #timeline .deco2-star-pink2{ top:10%; left:5%; width:clamp(28px,4.5vw,46px); transform:rotate(-8deg); }
   #timeline .deco2-note-green{ top:34%; right:14%; width:clamp(18px,2.8vw,28px); transform:rotate(10deg); }
   #timeline .deco2-note-orange{ bottom:8%; right:8%; width:clamp(20px,3vw,32px); transform:rotate(-14deg); }
   #timeline .deco2-notepad{ bottom:4%; left:4%; width:clamp(34px,5.5vw,56px); transform:rotate(6deg); opacity:.7; }
+  #timeline .deco2-leaf-yellow-c{ top:6%; right:26%; width:clamp(18px,2.8vw,26px); transform:rotate(14deg); opacity:.6; }
 
   #booth .deco2-puzzle{ top:3%; left:2%; width:clamp(36px,5.5vw,58px); transform:rotate(-10deg); opacity:.75; }
   #booth .deco2-book-yellow{ bottom:5%; left:1%; width:clamp(30px,5vw,50px); transform:rotate(8deg); opacity:.7; }
+  #booth .deco2-leaf-yellow-d{ top:2%; right:3%; width:clamp(20px,3vw,30px); transform:rotate(-8deg); opacity:.6; }
 
-  #event .deco2-lamp-blue{ top:3%; left:2%; width:clamp(40px,6vw,64px); transform:rotate(-6deg); opacity:.7; }
   #event .deco2-shape-blue{ top:6%; right:5%; width:clamp(66px,10.2vw,108px); transform:rotate(12deg); }
   #event .deco2-leaf-orange{ bottom:3%; left:2%; width:clamp(30px,4.6vw,48px); transform:rotate(-14deg); opacity:.7; }
+  #event .deco2-leaf-yellow-e{ top:8%; left:8%; width:clamp(18px,2.8vw,26px); transform:rotate(18deg); opacity:.6; }
 
   #layout .deco2-acorn{ top:4%; right:3%; width:clamp(26px,4vw,42px); transform:rotate(10deg); opacity:.75; }
   #layout .deco2-leaf-orange{ bottom:3%; left:2%; width:clamp(30px,4.6vw,48px); transform:rotate(-14deg); opacity:.7; }
+  #layout .deco2-leaf-yellow-f{ top:10%; left:6%; width:clamp(18px,2.8vw,28px); transform:rotate(-16deg); opacity:.6; }
 
   footer .deco2-leaf-yellow2{ top:12%; right:6%; width:clamp(24px,3.6vw,38px); transform:rotate(-10deg); opacity:.55; }
+  footer .deco2-leaf-yellow-g{ bottom:14%; left:12%; width:clamp(18px,2.8vw,26px); transform:rotate(12deg); opacity:.45; }
+
+  /* 라벨 옆 인라인 장식(부스 더미, 이벤트 스탠드) */
+  .block-label-row .deco-inline{
+    position:static; display:inline-block;
+  }
+  .block-label-row .deco2-lamp-inline{
+    width:clamp(38px,5.8vw,58px); transform:rotate(-13deg); opacity:.95;
+  }
 
   .hero-title-img{
     display:block;
@@ -129,7 +142,6 @@
     padding-bottom:.3rem; border-bottom:5px solid var(--section-accent);
   }
   .block-sub{ font-size:.92rem; color:#5b5347; margin-bottom:2.4rem; line-height:1.6; }
-  .block-label-row .deco-bookstack{ position:static; width:clamp(44px,6vw,64px); transform:rotate(-4deg); }
 
   #timeline{ background:var(--page-background); }
   #booth{ background:var(--card-background); }
@@ -138,6 +150,17 @@
 
   #booth .deco-glasses{ bottom:1%; right:-2%; width:clamp(80px,12vw,150px); transform:rotate(6deg); opacity:.85; }
   #timeline .deco-guitar{ top:5%; right:4%; width:clamp(56px,9vw,100px); transform:rotate(10deg); opacity:.9; }
+
+  /* 1번 부스 카드 옆 책더미 장식 */
+  #b01{ position:relative; overflow:visible; }
+  #b01 .deco-bookstack-near{
+    position:absolute;
+    top:-20px; right:-14px;
+    width:clamp(46px,7vw,64px);
+    transform:rotate(-6deg);
+    z-index:3;
+    pointer-events:none;
+  }
 
   .sub-card{
     background:var(--page-background); border:2.5px solid var(--page-text); border-radius:14px;
@@ -271,7 +294,6 @@
     .menu-btn{ padding:.8rem 1.2rem; font-size:.85rem; }
     .facts{ padding:1.1rem 1.3rem; }
     .hero .deco-flower, .hero .deco-coffeecup{ width:60px; }
-    .block-label-row .deco-bookstack{ width:38px; }
     .booth-card{ padding:1.1rem 1rem; gap:.7rem; }
     .event-step{ flex-basis:100%; }
     .step-arrow{ transform:rotate(90deg); margin:0 auto; }
@@ -312,6 +334,7 @@
     <img class="deco deco-coffeecup" src="images/deco/coffeecup.png" alt="" aria-hidden="true">
     <img class="deco2 deco2-star-orange" src="images/deco2/star-orange.png" alt="" aria-hidden="true">
     <img class="deco2 deco2-leaf-yellow" src="images/deco2/leaf-yellow.png" alt="" aria-hidden="true">
+    <img class="deco2 deco2-leaf-yellow-b" src="images/deco2/leaf-yellow.png" alt="" aria-hidden="true">
     <div class="hero-content">
       <img class="hero-title-img" src="images/hero-title.png" alt="2026 책모꼬지 성북 북페스티벌">
       <div class="facts">
@@ -345,6 +368,7 @@
     <img class="deco2 deco2-note-green" src="images/deco2/note-green.png" alt="" aria-hidden="true">
     <img class="deco2 deco2-note-orange" src="images/deco2/note-orange.png" alt="" aria-hidden="true">
     <img class="deco2 deco2-notepad" src="images/deco2/notepad.png" alt="" aria-hidden="true">
+    <img class="deco2 deco2-leaf-yellow-c" src="images/deco2/leaf-yellow.png" alt="" aria-hidden="true">
     <div class="block-inner">
       <div class="block-label-row"><h2 class="block-label">일정</h2></div>
       <p class="block-sub">낮부터 밤까지 성북 책모꼬지와 함께!</p>
@@ -389,10 +413,10 @@
     <img class="deco deco-glasses" src="images/deco/glasses.png" alt="" aria-hidden="true">
     <img class="deco2 deco2-puzzle" src="images/deco2/puzzle.png" alt="" aria-hidden="true">
     <img class="deco2 deco2-book-yellow" src="images/deco2/book-yellow.png" alt="" aria-hidden="true">
+    <img class="deco2 deco2-leaf-yellow-d" src="images/deco2/leaf-yellow.png" alt="" aria-hidden="true">
     <div class="block-inner">
       <div class="block-label-row">
         <h2 class="block-label">부스</h2>
-        <img class="deco-bookstack" src="images/deco/bookstack.png" alt="" aria-hidden="true">
       </div>
       <p class="event-headcopy">성북구립도서관 네트워크,<br>유관기관과 함께하는 체험부스<br></p>
 
@@ -419,6 +443,7 @@
       </div>
 
       <div class="booth-card" id="b01">
+        <img class="deco-bookstack-near" src="images/deco/bookstack.png" alt="" aria-hidden="true">
         <div class="booth-num">01</div>
         <div class="booth-body">
           <p class="booth-title">우리랑 <span class="booth-org">&amp; 아리랑도서관</span></p>
@@ -615,10 +640,14 @@
 
   <!-- 구간5: 이벤트 -->
   <section class="block" id="event">
-    <img class="deco2 deco2-lamp-blue" src="images/deco2/lamp-blue.png" alt="" aria-hidden="true">
     <img class="deco2 deco2-shape-blue" src="images/deco2/shape-blue.png" alt="" aria-hidden="true">
+    <img class="deco2 deco2-leaf-orange" src="images/deco2/leaf-orange.png" alt="" aria-hidden="true">
+    <img class="deco2 deco2-leaf-yellow-e" src="images/deco2/leaf-yellow.png" alt="" aria-hidden="true">
     <div class="block-inner">
-      <div class="block-label-row"><h2 class="block-label">이벤트</h2></div>
+      <div class="block-label-row">
+        <h2 class="block-label">이벤트</h2>
+        <img class="deco-inline deco2-lamp-inline" src="images/deco2/lamp-blue.png" alt="" aria-hidden="true">
+      </div>
       <p class="event-headcopy">발길 닿는 곳마다 손에 남는 즐거움</p>
       <p class="event-note">※ 이벤트 선물은 한정수량으로 조기 소진될 수 있습니다.</p>
 
@@ -654,6 +683,7 @@
   <section class="block" id="layout">
     <img class="deco2 deco2-acorn" src="images/deco2/acorn.png" alt="" aria-hidden="true">
     <img class="deco2 deco2-leaf-orange" src="images/deco2/leaf-orange.png" alt="" aria-hidden="true">
+    <img class="deco2 deco2-leaf-yellow-f" src="images/deco2/leaf-yellow.png" alt="" aria-hidden="true">
     <div class="block-inner">
       <h2 class="block-label" style="display:block; margin-bottom:1.6rem;">배치도 &middot; 오시는 길</h2>
 
@@ -691,6 +721,7 @@
   <footer>
     <img class="deco deco-paperplane" src="images/deco/paperplane.png" alt="" aria-hidden="true">
     <img class="deco2 deco2-leaf-yellow2" src="images/deco2/leaf-yellow.png" alt="" aria-hidden="true">
+    <img class="deco2 deco2-leaf-yellow-g" src="images/deco2/leaf-yellow.png" alt="" aria-hidden="true">
     <div class="footer-inner">
       <p class="name">2026 성북 책모꼬지</p>
       <p>2026. 9. 6.(일) 15:00~20:00</p>
