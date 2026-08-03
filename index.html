@@ -94,7 +94,7 @@
   }
   .event-note .deco2-lamp-inline{
     display:inline-block; vertical-align:middle; margin-left:.9rem;
-    width:clamp(38px,5.8vw,58px); transform:rotate(-3deg)translateY(-13px); opacity:.95;
+    width:clamp(38px,5.8vw,58px); transform:rotate(-13deg); opacity:.95;
   }
 
   .hero-title-img{
@@ -194,6 +194,28 @@
   .t-sub .t-time{ font-size:.88rem; }
   .t-sub .t-desc{ font-size:.9rem; }
   .note-inline{ font-size:.75rem; color:#a49a86; }
+
+  /* ---------- SETLIST ---------- */
+  .setlist{
+    list-style:none;
+    margin-top:.6rem;
+    border:2px solid var(--page-text);
+    border-radius:12px;
+    overflow:hidden;
+    background:var(--card-background);
+  }
+  .setlist li{
+    display:flex; align-items:baseline; gap:.55rem;
+    padding:.55rem .8rem;
+    border-bottom:1px solid #e4dbc6;
+  }
+  .setlist li:last-child{ border-bottom:none; }
+  .set-note{
+    flex:0 0 auto; width:1.1rem;
+    font-size:.85rem; color:var(--section-accent);
+  }
+  .set-song{ font-weight:700; font-size:.88rem; color:var(--page-text); }
+  .set-artist{ font-size:.76rem; color:#8a8069; margin-left:.3rem; }
 
   /* ---------- BOOTH GRID ---------- */
   .booth-headcopy{
@@ -385,8 +407,26 @@
         </div>
         <div class="t-item t-day">
           <span class="t-time">15:00 – 16:10</span>
-          <p class="t-desc">버스킹 공연 – APT <span class="note-inline">고려대학교 버스킹동아리</span> / 남궁마츠코 <span class="note-inline">한국예술종합학교 동아리</span>
-          </p>
+          <p class="t-desc">버스킹 공연</p>
+          <div class="t-sub-list">
+            <div class="t-sub">
+              <span class="t-time">15:00</span>
+              <p class="t-desc">APT 공연<span class="note-inline"> 고려대학교 버스킹동아리</span><br>셋리스트 업데이트 예정</p>
+            </div>
+            <div class="t-sub">
+              <span class="t-time">15:40</span>
+              <p class="t-desc">남궁마츠코 공연<span class="note-inline"> 한국예술종합학교 동아리</span></p>
+              <ol class="setlist">
+                <li><span class="set-note">♪</span><span class="set-song">사랑은 없다고</span><span class="set-artist">남궁 마츠코</span></li>
+                <li><span class="set-note">♪</span><span class="set-song">깊은 밤을 날아서</span><span class="set-artist">이문세</span></li>
+                <li><span class="set-note">♪</span><span class="set-song">나침반</span><span class="set-artist">한로로</span></li>
+                <li><span class="set-note">♪</span><span class="set-song">스크류드라이버</span><span class="set-artist">남궁 마츠코</span></li>
+                <li><span class="set-note">♪</span><span class="set-song">마루노우치 새디스틱</span><span class="set-artist">시이나 링고</span></li>
+                <li><span class="set-note">♪</span><span class="set-song">다시 만난 세계</span><span class="set-artist">소녀시대</span></li>
+                <li><span class="set-note">♪</span><span class="set-song">깜빡 안녕</span><span class="set-artist">남궁 마츠코</span></li>
+              </ol>
+            </div>
+          </div>
         </div>
         <div class="t-item t-main">
           <span class="t-time">18:30 – 20:00</span>
@@ -404,7 +444,8 @@
               <span class="t-time">19:00</span>
               <p class="t-desc">
                 사회자 – 박민영<span class="note-inline"> 보문숲길도서관 네트워크 보문보물</span> <br>
-                메인공연 – 클래식앙상블 포크앙상블 <span class="note-inline">FORK Ensemble</span> / 아카펠라 보이스토이 <span class="note-inline">VoiceToy</span>
+                메인공연 – 클래식앙상블 포크앙상블 <span class="note-inline">FORK Ensemble</span> / 아카펠라 보이스토이 <span class="note-inline">VoiceToy</span><br>
+                셋리스트 업데이트 예정
               </p>
             </div>
           </div>
@@ -423,7 +464,7 @@
       <div class="block-label-row">
         <h2 class="block-label">부스</h2>
       </div>
-      <p class="event-headcopy">성북구립도서관 네트워크,<br>유관기관과 함께하는 체험부스<br><br></p>
+      <p class="event-headcopy">성북구립도서관 네트워크,<br>유관기관과 함께하는 체험부스<br></p>
 
 
       <div class="booth-index">
@@ -431,16 +472,16 @@
         <a href="#b02">보문숲길도서관</a>
         <a href="#b03">성북길빛도서관</a>
         <a href="#b04">장위행복누림<br>·오동숲속도서관</a>
-        <a href="#b05">종암동<br>새날도서관</a>
+        <a href="#b05">종암동새날도서관</a>
         <a href="#b06">청수·정릉도서관</a>
-        <a href="#b07">글빛<br>·서경로꿈마루도서관</a>
+        <a href="#b07">글빛·서경로꿈마루<br>도서관</a>
         <a href="#b08">한성대학교</a>
         <a href="#b09">동덕여자대학교</a>
         <a href="#b10">새마을문고</a>
         <a href="#b11">문화공간이육사<br>·한국근현대문학관</a>
-        <a href="#b12">작은도서관<br>네트워크</a>
+        <a href="#b12">작은도서관네트워크</a>
         <a href="#b13">성북정보도서관</a>
-        <a href="#b14">석관동<br>미리내도서관</a>
+        <a href="#b14">석관동미리내도서관</a>
         <a href="#b15">달빛마루도서관</a>
         <a href="#b16">아리랑어린이도서관</a>
         <a href="#b17">성북어린이청소년<br>·월곡꿈그림도서관</a>
@@ -621,7 +662,7 @@
       <div class="booth-card" id="b17">
         <div class="booth-num">17</div>
         <div class="booth-body">
-          <p class="booth-title">청청프로젝트 × 독한친구들 <span class="booth-org">&amp; 성북어린이청소년·월곡꿈그림도서관</span></p>
+          <p class="booth-title">청청프로젝트·독한친구들 <span class="booth-org">&amp; 성북어린이청소년·월곡꿈그림도서관</span></p>
           <ul class="booth-desc">
             <li><span class="li-title">청청펀펀프로젝트</span></li>
             <li>성북구 청소년 한책추진단 &lt;청청프로젝트&gt; 소개와 청소년들과 함께 읽고 있는 도서 전시</li>
