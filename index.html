@@ -319,6 +319,12 @@
   footer .name{ font-weight:800; font-size:1.15rem; margin-bottom:.4rem; color:var(--footer-accent); }
 
   @media (max-width:480px){
+    /* 장식 요소는 유지하되 텍스트 뒤에 배치 */
+  .deco,
+  .deco2 {
+    z-index: -1;
+    pointer-events: none;
+  }
     .booth-index a br { display: none; }
     .event-step br { display: none; }
     .menu-btn{ padding:.8rem 1.2rem; font-size:.85rem; }
